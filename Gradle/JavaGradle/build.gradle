@@ -50,6 +50,9 @@ task runFraction(type: JavaExec) {
 
   main = 'Fraction'
 
+  if (project.hasProperty("Pdenom") && project.hasProperty("pnum")) {
+    args(project.getProperty('Pdenom'), project.getProperty('pnum'))
+  }
 }
 	
 // Try:
@@ -57,12 +60,12 @@ task runFraction(type: JavaExec) {
 // 2. Create a new gradle tasks that accepts two arguments and 
 //    can be called as: gradle runFrac -Pdenom=4 -Pnum=3 or as gradle runFrac -Pnum=3 -Pdenom=4 
 
-// Example how you can add that libraries can be pulled from mavenCentral()
-// repositories {
-//   mavenCentral()
-// }
+/* Example how you can add that libraries can be pulled from mavenCentral()
+repositories {
+  mavenCentral()
+ }
 
-// Setting dependencies, e.g. when you import JSON in your Java files
-// dependencies{
-//   compile 'org.json:json:20171018'
-// }
+ Setting dependencies, e.g. when you import JSON in your Java files
+ dependencies{
+   compile 'org.json:json:20171018'
+ }*/
