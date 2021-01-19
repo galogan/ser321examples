@@ -50,8 +50,8 @@ task runFraction(type: JavaExec) {
 
   main = 'Fraction'
 
-  if (project.hasProperty("Pdenom") && project.hasProperty("pnum")) {
-    args(project.getProperty('Pdenom'), project.getProperty('pnum'))
+  if (project.hasProperty("Pdenom") && project.hasProperty("Pnum")) {
+    args(project.getProperty('Pdenom'), project.getProperty('Pnum'))
   }
 }
 	
