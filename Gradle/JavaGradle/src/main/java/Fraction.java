@@ -37,11 +37,16 @@ public class Fraction {
       return numerator;
    }
 
-   public static void main (String args[]) {
+   public static void main (String[] args) {
+      if(args.length == 2){
+      int argN = 0;
+      int argD = 0;
       try {
          // create a new instance
          // Fraction *frac = [[Fraction alloc] init];
          Fraction frac = new Fraction();
+         argN = Integer.parseInt(args[0]);
+         argD = Integer.parseInt(args[1]);
 
          // set the values
          frac.setNumerator(1);
@@ -52,8 +57,13 @@ public class Fraction {
          frac.print();
          System.out.println("");
 
-      }catch(Exception e) {
-         e.printStackTrace();
+      } catch (Exception e) {
+         System.out.println("Arguments: " + args[0] + " , " + args[1] + " Absolutely have to be integers");
+         System.exit(1);
+      }
+      System.out.println(argD + " / " + argN + " = " + argN / argD);
+   }else{
+         System.out.println("Exactly 2 arguments should be provided.\\n gradle run --args='1 2' ");
       }
    }
 }
