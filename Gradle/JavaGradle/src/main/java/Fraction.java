@@ -22,7 +22,7 @@ public class Fraction {
            System.out.println("The arguments you passed " + args[0] + " and " + args[1] + " are not integers");
            System.exit(1);
         }
-       System.out.println(" Using the numbers you provided " + argN + " and " + argD + " we were able to create your fraction." +
+       System.out.println(" Using the numbers you provided " + argN + " and " + argD + " ,we were able to create your fraction." +
                "\n Here is your Fraction " + argN + "/" + argD);
        }else{
           System.out.println("You need to add only two arguments to create this fraction. " +
