@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 //define main class
 mainClassName = 'Multiply'
-
+mainClassName = 'Fraction'
 // task which will run Main with default parameters, 
 // can be overwritten with: gradle runApp --args '3 4' 
 task runApp(type: JavaExec) {
@@ -50,13 +50,8 @@ task runFraction(type: JavaExec) {
 
   main = 'Fraction'
 
-  if (project.hasProperty("Pnum") && project.hasProperty("Pdnum")) {
-    args(project.getProperty('Pnum'), project.getProperty('Pdnum'))
-  } else if (project.hasProperty("Pnum")){
-    //args(project.getProperty('num1'), 1);
-  }
 }
-
+	
 // Try:
 // 1. Change Fraction.main so it accepts 2 arguments
 // 2. Create a new gradle tasks that accepts two arguments and 
