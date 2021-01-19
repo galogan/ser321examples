@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Gradle/JavaGradle" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Gradle/JavaGradle" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Gradle/JustGradle" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Gradle/JustGradle" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Middleware" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Middleware" />
+            <option value="$PROJECT_DIR$/Middleware/G-RPC" />
+            <option value="$PROJECT_DIR$/Middleware/JMS" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/HTTP-JSON" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/HTTP-JSON" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/IPs" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/IPs" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/JSON" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/JSON" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/JsonRPCviaTCPStudent" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/JsonRPCviaTCPStudent" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/SimpleGrabHttpURL" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/SimpleGrabHttpURL" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/SimpleGrabURL" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/SimpleGrabURL" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/tcp" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/tcp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Network/udp" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Network/udp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Serialization/ClassMigration" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Serialization/ClassMigration" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Serialization/GroupJson" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Serialization/GroupJson" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Serialization/GroupSerialize" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Serialization/GroupSerialize" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Serialization/ProtocolBuffers" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Serialization/ProtocolBuffers" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Serialization/UserXml" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Serialization/UserXml" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/AdvancedCustomProtocol" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/AdvancedCustomProtocol" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/Echo_Java" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/Echo_Java" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/GroupSerializeSocket" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/GroupSerializeSocket" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/JavaSimpleSock" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/JavaSimpleSock" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/JavaThreadSock" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/JavaThreadSock" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/MulticastSocket" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/MulticastSocket" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/SimpleCustomProtocol" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/SimpleCustomProtocol" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/SimpleInterop/Cpp" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/SimpleInterop/Cpp" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/SimpleInterop/Java" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/SimpleInterop/Java" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/SimplePeerToPeer" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/SimplePeerToPeer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/SimpleWebServer" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/SimpleWebServer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/Socket" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/Socket" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/SocketState" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/SocketState" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Sockets/WebServer" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Sockets/WebServer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/Account" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/Account" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/Deadlock" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/Deadlock" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/FileCopy" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/FileCopy" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/FirstThread" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/FirstThread" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/Locks" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/Locks" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/MusicThread" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/MusicThread" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/NetworkDeadlock" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/NetworkDeadlock" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/Synchronization" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/Synchronization" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/ThreadPool" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/ThreadPool" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Threads/ThreadsShareData" />
+        <option name="gradleJvm" value="14 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Threads/ThreadsShareData" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

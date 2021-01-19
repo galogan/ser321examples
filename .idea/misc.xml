@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Gradle/JavaGradle" />
+    <file type="web" url="file://$PROJECT_DIR$/Gradle/JustGradle" />
+    <file type="web" url="file://$PROJECT_DIR$/Middleware" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/HTTP-JSON" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/IPs" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/JSON" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/JsonRPCviaTCPStudent" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/SimpleGrabHttpURL" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/SimpleGrabURL" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/tcp" />
+    <file type="web" url="file://$PROJECT_DIR$/Network/udp" />
+    <file type="web" url="file://$PROJECT_DIR$/Serialization/ClassMigration" />
+    <file type="web" url="file://$PROJECT_DIR$/Serialization/GroupJson" />
+    <file type="web" url="file://$PROJECT_DIR$/Serialization/GroupSerialize" />
+    <file type="web" url="file://$PROJECT_DIR$/Serialization/ProtocolBuffers" />
+    <file type="web" url="file://$PROJECT_DIR$/Serialization/UserXml" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/AdvancedCustomProtocol" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/Echo_Java" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/GroupSerializeSocket" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/JavaSimpleSock" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/JavaThreadSock" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/MulticastSocket" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/SimpleCustomProtocol" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/SimpleInterop/Cpp" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/SimpleInterop/Java" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/SimplePeerToPeer" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/SimpleWebServer" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/Socket" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/SocketState" />
+    <file type="web" url="file://$PROJECT_DIR$/Sockets/WebServer" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/Account" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/Deadlock" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/FileCopy" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/FirstThread" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/Locks" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/MusicThread" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/NetworkDeadlock" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/Synchronization" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/ThreadPool" />
+    <file type="web" url="file://$PROJECT_DIR$/Threads/ThreadsShareData" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK" />
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Account.main" target="14" />
+      <module name="Account.test" target="14" />
+      <module name="GroupJson.main" target="14" />
+      <module name="GroupJson.test" target="14" />
+      <module name="Middleware.G-RPC" target="14" />
+      <module name="Middleware.G-RPC.main" target="14" />
+      <module name="Middleware.G-RPC.test" target="14" />
+      <module name="SimplePeerToPeer.main" target="14" />
+      <module name="SimplePeerToPeer.test" target="14" />
+      <module name="Socket.main" target="14" />
+      <module name="Socket.test" target="14" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
