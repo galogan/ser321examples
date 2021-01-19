@@ -23,7 +23,7 @@ public class Fraction {
            System.exit(1);
         }
        System.out.println(" Using the numbers you provided " + argN + " and " + argD + " we were able to create your fraction." +
-               "\n Here is your Fraction " + argN + " / " + argD);
+               "\n Here is your Fraction " + argN + "/" + argD);
        }else{
           System.out.println("You need to add only two arguments to create this fraction. " +
                   "You have either add not enough or one to many.");
