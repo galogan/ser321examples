@@ -239,7 +239,7 @@ class WebServer {
                         System.out.println(repoName);
 
                         JSONObject owner = repo.getJSONObject("owner");
-                        String ownername = owner.getString("login");
+                        String ownername = owner.getString("owner name");
                         int id = owner.getInt("id");
                         System.out.println(ownername);
                         System.out.println(id);
