@@ -240,39 +240,6 @@ class WebServer {
                         builder.append("Repo name is : " + repoName);
 
                     }
-/*                        JSONObject newRepo = new JSONObject();
-                        newRepo.put("name", repoName);
-                        newRepo.put("owner", ownername);
-
-                        String jsonBranches = fetchURL("https://api.github.com/" + query_pairs.get("query"));
-                        JSONArray branches = new JSONArray(jsonBranches);
-
-                        JSONArray newBranchJSON = new JSONArray();
-
-                        for (int j = 0; j < branches.length(); j++) {
-                            JSONObject branch = branches.getJSONObject(j);
-                            String branchName = branch.getString("name");
-                            System.out.println(" " + branchName);
-                            JSONObject newBranch = new JSONObject();
-                            newBranch.put("name", branchName);
-
-                            newBranchJSON.put(newBranch);
-                        }
-                        newRepo.put("branches", newBranchJSON);
-                        newjSON.put(newRepo);
-                    }
-                    PrintWriter out = new PrintWriter("repoShort.json");
-                    out.println(newjSON.toString());
-                    out.close();
-
-                }
-                builder.append("Check the todos mentioned in the Java source file");
-                // TODO: Parse the JSON returned by your fetch and create an appropriate
-                // response
-                // and list the owner name, owner id and name of the public repo on your webpage, e.g.
-                // amehlhase, 46384989 -> memoranda
-                // amehlhase, 46384989 -> ser316examples
-                // amehlhase, 46384989 -> test316*/
 
                 } else {
                     // if the request is not recognized at all
@@ -284,6 +251,7 @@ class WebServer {
 
 
                 }
+                builder.append("Check the todo list");
                 response = builder.toString().getBytes();
             }
         } catch (IOException e) {
