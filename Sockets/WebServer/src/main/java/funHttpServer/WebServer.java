@@ -262,7 +262,7 @@ class WebServer {
 
 
                             // fetch all the branches from the repo and save and branches JSONArray
-                            String jsonBranches = fetchURL("https://api.github.com/repos/" + user);
+                            String jsonBranches = fetchURL("https://api.github.com/" + query_pairs.get("query"));
                             JSONArray branches = new JSONArray(jsonBranches);
 
                             // create a new branch JSON object
