@@ -15,7 +15,10 @@ write a response back
 */
 
 package funHttpServer;
-import org.json.*;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
@@ -221,7 +224,7 @@ class WebServer {
                     String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
                     System.out.println(json);
 
-                  /*  JSONArray repoArray = new JSONArray(json);
+                    JSONArray repoArray = new JSONArray(json);
                     for (int i = 0; i < repoArray.length(); i++) {
                         JSONObject repo = repoArray.getJSONObject(i);
 
@@ -235,9 +238,9 @@ class WebServer {
                         System.out.println(ownername);
                         System.out.println(id);
 
-                        builder.append("the owner name is: " + ownername);
-                        builder.append("The owner id is: " + id);
-                        builder.append("Repo name is : " + repoName);
+                        builder.append("the owner name is: " + ownername + "\n");
+                        builder.append("The owner id is: " + id + "\n");
+                        builder.append("Repo name is : " + repoName + "\n");
 
                     }
 
@@ -250,8 +253,8 @@ class WebServer {
                     builder.append("I am not sure what you want me to do...");
 
 
-                }*/
-                }               builder.append("Check the todo list");
+                }
+                builder.append("Check the todo list");
                 response = builder.toString().getBytes();
             }
         } catch (IOException e) {
