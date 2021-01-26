@@ -259,9 +259,8 @@ class WebServer {
                     builder.append("I am not sure what you want me to do...");
 
 
+                    response = builder.toString().getBytes();
                 }
-                builder.append("Check the todo list");
-                response = builder.toString().getBytes();
             }
         } catch (IOException e) {
             e.printStackTrace();
