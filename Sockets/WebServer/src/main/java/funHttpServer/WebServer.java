@@ -220,7 +220,7 @@ class WebServer {
                         builder.append("HTTP/1.1 400 Incorrect Integers\n");
                         builder.append("Content-Type: text/html; charset=utf-8\n");
                         builder.append("\n");
-                        builder.append("Unable to multiply " + num1 + " and " + num2);
+                        builder.append("Unable to multiply ").append(num1).append(" and ").append(num2);
 
                     }
                 } else if (request.contains("github?")) {
@@ -229,9 +229,9 @@ class WebServer {
                         //System.out.println(fetchURL("https://api.github.com/rate_limit")); // in case you need to check your rate limit
 
                         //String user = args[0];
-                        Map <String, String> query_pairs = new LinkedHashMap <String, String>();
-                        query_pairs = splitQuery(request.replace("github?", ""));
-                        String json = fetchURL("https://api.github.com/" + query_pairs.get("query")); // fetching the JSON reply
+                       /** Map <String, String> query_pairs = new LinkedHashMap <String, String>();
+                        query_pairs = splitQuery(request.replace("github?", ""));*/
+                        String json = fetchURL("https://api.github?query=users/amehlhase316/repos"); // fetching the JSON reply
                         System.out.println(json); // printing it so you see how it looks like
 
                         // saving it as JSON array (if it sere not an array it would need to be a JSONObject)
@@ -262,7 +262,7 @@ class WebServer {
 
 
                             // fetch all the branches from the repo and save and branches JSONArray
-                            String jsonBranches = fetchURL("https://api.github.com/" + query_pairs.get("query"));
+                            String jsonBranches = fetchURL("https://api.github?query=users/amehlhase316/repos");
                             JSONArray branches = new JSONArray(jsonBranches);
 
                             // create a new branch JSON object
