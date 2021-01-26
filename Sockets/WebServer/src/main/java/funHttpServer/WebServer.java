@@ -15,10 +15,7 @@ write a response back
 */
 
 package funHttpServer;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
+import org.json.*;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.Charset;
@@ -218,13 +215,6 @@ class WebServer {
                     // a response that makes sense
 
                 } else if (request.contains("github?")) {
-                    // pulls the query from the request and runs it with GitHub's REST API
-                    // check out https://docs.github.com/rest/reference/
-                    //
-                    // HINT: REST is organized by nesting topics. Figure out the biggest one first,
-                    //     then drill down to what you care about
-                    // "Owner's repo is named RepoName. Example: find RepoName's contributors" translates to
-                    //     "/repos/OWNERNAME/REPONAME/contributors"
 
                     Map <String, String> query_pairs = new LinkedHashMap <String, String>();
                     query_pairs = splitQuery(request.replace("github?", ""));
@@ -234,6 +224,8 @@ class WebServer {
                     JSONArray repoArray = new JSONArray(json);
                     for (int i = 0; i < repoArray.length(); i++) {
                         JSONObject repo = repoArray.getJSONObject(i);
+
+
                         String repoName = repo.getString("name");
                         System.out.println(repoName);
 
@@ -292,7 +284,7 @@ class WebServer {
 
 
                 }
-                response = toString().getBytes();
+                response = builder.toString().getBytes();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -301,7 +293,6 @@ class WebServer {
 
         return response;
     }
-
 
 
     /**
