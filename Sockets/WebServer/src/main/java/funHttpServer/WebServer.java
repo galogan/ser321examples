@@ -31,7 +31,6 @@ class WebServer {
 
     /**
      * Main thread
-     *
      * @param port to listen on
      */
     public WebServer(int port) {
@@ -70,7 +69,7 @@ class WebServer {
     /**
      * Used in the "/random" endpoint
      */
-    private final static HashMap <String, String> _images = new HashMap <>() {
+    private final static HashMap<String, String> _images = new HashMap<>() {
         {
             put("streets", "https://iili.io/JV1pSV.jpg");
             put("bread", "https://iili.io/Jj9MWG.jpg");
@@ -81,7 +80,6 @@ class WebServer {
 
     /**
      * Reads in socket stream and generates a response
-     *
      * @param inStream HTTP input stream from socket
      * @return the byte encoded HTTP response
      */
@@ -197,7 +195,7 @@ class WebServer {
                     // This multiplies two numbers, there is NO error handling, so when
                     // wrong data is given this just crashes
 
-                    Map <String, String> query_pairs = new LinkedHashMap <String, String>();
+                    Map<String, String> query_pairs = new LinkedHashMap<String, String>();
                     // extract path parameters
                     query_pairs = splitQuery(request.replace("multiply?", ""));
 
@@ -208,118 +206,48 @@ class WebServer {
                     // do math
                     Integer result = num1 * num2;
 
-                    if (request.contains("Multiply?")) {// Generate response
-                        builder.append("HTTP/1.1 200 OK\n");
-                        builder.append("Content-Type: text/html; charset=utf-8\n");
-                        builder.append("\n");
-                        builder.append("Result is: " + result);
+                    // Generate response
+                    builder.append("HTTP/1.1 200 OK\n");
+                    builder.append("Content-Type: text/html; charset=utf-8\n");
+                    builder.append("\n");
+                    builder.append("Result is: " + result);
 
-                        // TODO: Include error handling here with a correct error code and
-                        // a response that makes sense
-                    } else {
-                        builder.append("HTTP/1.1 400 Incorrect Integers\n");
-                        builder.append("Content-Type: text/html; charset=utf-8\n");
-                        builder.append("\n");
-                        builder.append("Unable to multiply ").append(num1).append(" and ").append(num2);
+                    // TODO: Include error handling here with a correct error code and
+                    // a response that makes sense
 
-                    }
                 } else if (request.contains("github?")) {
+                    // pulls the query from the request and runs it with GitHub's REST API
+                    // check out https://docs.github.com/rest/reference/
+                    //
+                    // HINT: REST is organized by nesting topics. Figure out the biggest one first,
+                    //     then drill down to what you care about
+                    // "Owner's repo is named RepoName. Example: find RepoName's contributors" translates to
+                    //     "/repos/OWNERNAME/REPONAME/contributors"
 
-                    try {
-                        //System.out.println(fetchURL("https://api.github.com/rate_limit")); // in case you need to check your rate limit
+                    Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+                    query_pairs = splitQuery(request.replace("github?", ""));
+                    String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
+                    System.out.println(json);
 
-                        //String user = args[0];
-                       /** Map <String, String> query_pairs = new LinkedHashMap <String, String>();
-                        query_pairs = splitQuery(request.replace("github?", ""));*/
-                        String json = fetchURL("https://api.github?query=users/amehlhase316/repos"); // fetching the JSON reply
-                        System.out.println(json); // printing it so you see how it looks like
+                    builder.append("Check the todos mentioned in the Java source file");
+                    // TODO: Parse the JSON returned by your fetch and create an appropriate
+                    // response
+                    // and list the owner name, owner id and name of the public repo on your webpage, e.g.
+                    // amehlhase, 46384989 -> memoranda
+                    // amehlhase, 46384989 -> ser316examples
+                    // amehlhase, 46384989 -> test316
 
-                        // saving it as JSON array (if it sere not an array it would need to be a JSONObject)
-                        JSONArray repoArray = new JSONArray(json);
-
-                        // new JSON which we want to save later on
-                        JSONArray newjSON = new JSONArray();
-
-                        // go through all the entries in the JSON array (so all the repos of the user)
-                        for (int i = 0; i < repoArray.length(); i++) {
-
-                            // now we have a JSON object, one repo
-                            JSONObject repo = repoArray.getJSONObject(i);
-
-                            // get repo name
-                            String repoName = repo.getString("name");
-                            System.out.println(repoName);
-
-                            // owner is a JSON object in the repo object, get it and save it in own variable then read the login name
-                            JSONObject owner = repo.getJSONObject("owner");
-                            String ownername = owner.getString("login");
-                            System.out.println(ownername);
-
-                            // create a new object for the repo we want to store add the repo name and owername to it
-                            JSONObject newRepo = new JSONObject();
-                            newRepo.put("name", repoName);
-                            newRepo.put("owner", ownername);
-
-
-                            // fetch all the branches from the repo and save and branches JSONArray
-                            String jsonBranches = fetchURL("https://api.github?query=users/amehlhase316/repos");
-                            JSONArray branches = new JSONArray(jsonBranches);
-
-                            // create a new branch JSON object
-                            JSONArray newBranchJSON = new JSONArray();
-
-                            // iterate through all branches and save the branch name
-                            for (int j = 0; j < branches.length(); j++) {
-                                JSONObject branch = branches.getJSONObject(j);
-                                String branchName = branch.getString("name");
-                                System.out.println("   " + branchName);
-                                JSONObject newBranch = new JSONObject();
-                                newBranch.put("name", branchName);
-
-                                // add new branch to branch array
-                                newBranchJSON.put(newBranch);
-                            }
-
-                            // add the branches array to the repo
-                            newRepo.put("branches", newBranchJSON);
-                            newjSON.put(newRepo);
-                        }
-
-                        // save shortened info into file
-                        PrintWriter out = new PrintWriter("repoShort.json");
-                        out.println(newjSON.toString());
-                        out.close();
-
-
-                    } catch (Exception e) {
-                        System.out.println("exception: " + e.getMessage());
-                        e.printStackTrace();
-                    }
-
-
-
-                //System.out.println(json);
-
-                builder.append("Check the todos mentioned in the Java source file");
-                // TODO: Parse the JSON returned by your fetch and create an appropriate
-                // response
-                // and list the owner name, owner id and name of the public repo on your webpage, e.g.
-                // amehlhase, 46384989 -> memoranda
-                // amehlhase, 46384989 -> ser316examples
-                // amehlhase, 46384989 -> test316
-
-            } else {
+                } else {
                     // if the request is not recognized at all
 
                     builder.append("HTTP/1.1 400 Bad Request\n");
                     builder.append("Content-Type: text/html; charset=utf-8\n");
                     builder.append("\n");
                     builder.append("I am not sure what you want me to do...");
-
-
-                    // Output
-                    response = builder.toString().getBytes();
                 }
+
+                // Output
+                response = builder.toString().getBytes();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -331,13 +259,12 @@ class WebServer {
 
     /**
      * Method to read in a query and split it up correctly
-     *
      * @param query parameters on path
      * @return Map of all parameters and their specific values
      * @throws UnsupportedEncodingException If the URLs aren't encoded with UTF-8
      */
-    public static Map <String, String> splitQuery(String query) throws UnsupportedEncodingException {
-        Map <String, String> query_pairs = new LinkedHashMap <String, String>();
+    public static Map<String, String> splitQuery(String query) throws UnsupportedEncodingException {
+        Map<String, String> query_pairs = new LinkedHashMap<String, String>();
         // "q=hello+world%2Fme&bob=5"
         String[] pairs = query.split("&");
         // ["q=hello+world%2Fme", "bob=5"]
@@ -352,11 +279,10 @@ class WebServer {
 
     /**
      * Builds an HTML file list from the www directory
-     *
      * @return HTML string output of file list
      */
     public static String buildFileList() {
-        ArrayList <String> filenames = new ArrayList <>();
+        ArrayList<String> filenames = new ArrayList<>();
 
         // Creating a File object for directory
         File directoryPath = new File("www/");
@@ -399,12 +325,14 @@ class WebServer {
     }
 
     /**
+     *
      * a method to make a web request. Note that this method will block execution
      * for up to 20 seconds while the request is being satisfied. Better to use a
      * non-blocking request.
      *
      * @param aUrl the String indicating the query url for the OMDb api search
      * @return the String result of the http request.
+     *
      **/
     public String fetchURL(String aUrl) {
         StringBuilder sb = new StringBuilder();
