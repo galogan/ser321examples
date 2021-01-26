@@ -208,15 +208,21 @@ class WebServer {
                     // do math
                     Integer result = num1 * num2;
 
-                    // Generate response
-                    builder.append("HTTP/1.1 200 OK\n");
-                    builder.append("Content-Type: text/html; charset=utf-8\n");
-                    builder.append("\n");
-                    builder.append("Result is: " + result);
+                    if (result != null) {// Generate response
+                        builder.append("HTTP/1.1 200 OK\n");
+                        builder.append("Content-Type: text/html; charset=utf-8\n");
+                        builder.append("\n");
+                        builder.append("Result is: " + result);
 
-                    // TODO: Include error handling here with a correct error code and
-                    // a response that makes sense
+                    } else {
+                        // if the request is not recognized at all
 
+                        builder.append("HTTP/1.1 400 Bad Request\n");
+                        builder.append("Content-Type: text/html; charset=utf-8\n");
+                        builder.append("\n");
+                        builder.append("I am not sure what you want me to do...");
+
+                    }
                 } else if (request.contains("github?")) {
 
                     Map <String, String> query_pairs = new LinkedHashMap <String, String>();
