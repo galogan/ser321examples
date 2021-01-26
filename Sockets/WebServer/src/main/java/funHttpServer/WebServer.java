@@ -31,6 +31,7 @@ class WebServer {
 
     /**
      * Main thread
+     *
      * @param port to listen on
      */
     public WebServer(int port) {
@@ -69,7 +70,7 @@ class WebServer {
     /**
      * Used in the "/random" endpoint
      */
-    private final static HashMap<String, String> _images = new HashMap<>() {
+    private final static HashMap <String, String> _images = new HashMap <>() {
         {
             put("streets", "https://iili.io/JV1pSV.jpg");
             put("bread", "https://iili.io/Jj9MWG.jpg");
@@ -80,6 +81,7 @@ class WebServer {
 
     /**
      * Reads in socket stream and generates a response
+     *
      * @param inStream HTTP input stream from socket
      * @return the byte encoded HTTP response
      */
@@ -195,7 +197,7 @@ class WebServer {
                     // This multiplies two numbers, there is NO error handling, so when
                     // wrong data is given this just crashes
 
-                    Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+                    Map <String, String> query_pairs = new LinkedHashMap <String, String>();
                     // extract path parameters
                     query_pairs = splitQuery(request.replace("multiply?", ""));
 
@@ -224,33 +226,38 @@ class WebServer {
                     // "Owner's repo is named RepoName. Example: find RepoName's contributors" translates to
                     //     "/repos/OWNERNAME/REPONAME/contributors"
 
-                    /*Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+                    Map <String, String> query_pairs = new LinkedHashMap <String, String>();
                     query_pairs = splitQuery(request.replace("github?", ""));
-                    String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));*/
-                    String json =fetchURL("https://api.github?query=users/amehlhase316/repos");
+                    String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
                     System.out.println(json);
 
                     JSONArray repoArray = new JSONArray(json);
-                    JSONArray newjSON = new JSONArray();
-                    for(int i  = 0; i < repoArray.length();i++){
+                    for (int i = 0; i < repoArray.length(); i++) {
                         JSONObject repo = repoArray.getJSONObject(i);
                         String repoName = repo.getString("name");
                         System.out.println(repoName);
 
                         JSONObject owner = repo.getJSONObject("owner");
                         String ownername = owner.getString("login");
+                        int id = owner.getInt("id");
                         System.out.println(ownername);
+                        System.out.println(id);
 
-                        JSONObject newRepo = new JSONObject();
-                        newRepo.put("name",repoName);
+                        builder.append("the owner name is: " + ownername);
+                        builder.append("The owner id is: " + id);
+                        builder.append("Repo name is : " + repoName);
+
+                    }
+/*                        JSONObject newRepo = new JSONObject();
+                        newRepo.put("name", repoName);
                         newRepo.put("owner", ownername);
 
-                        String jsonBranches = fetchURL("https://api.github?query=users/amehlhase316/repos");
+                        String jsonBranches = fetchURL("https://api.github.com/" + query_pairs.get("query"));
                         JSONArray branches = new JSONArray(jsonBranches);
 
                         JSONArray newBranchJSON = new JSONArray();
 
-                        for(int j = 0;j< branches.length();j++) {
+                        for (int j = 0; j < branches.length(); j++) {
                             JSONObject branch = branches.getJSONObject(j);
                             String branchName = branch.getString("name");
                             System.out.println(" " + branchName);
@@ -261,30 +268,32 @@ class WebServer {
                         }
                         newRepo.put("branches", newBranchJSON);
                         newjSON.put(newRepo);
-                        }
+                    }
                     PrintWriter out = new PrintWriter("repoShort.json");
                     out.println(newjSON.toString());
                     out.close();
 
-                    }
-                    builder.append("Check the todos mentioned in the Java source file");
-                    // TODO: Parse the JSON returned by your fetch and create an appropriate
-                    // response
-                    // and list the owner name, owner id and name of the public repo on your webpage, e.g.
-                    // amehlhase, 46384989 -> memoranda
-                    // amehlhase, 46384989 -> ser316examples
-                    // amehlhase, 46384989 -> test316
+                }
+                builder.append("Check the todos mentioned in the Java source file");
+                // TODO: Parse the JSON returned by your fetch and create an appropriate
+                // response
+                // and list the owner name, owner id and name of the public repo on your webpage, e.g.
+                // amehlhase, 46384989 -> memoranda
+                // amehlhase, 46384989 -> ser316examples
+                // amehlhase, 46384989 -> test316*/
 
-                } /*else {
+                } else {
                     // if the request is not recognized at all
 
                     builder.append("HTTP/1.1 400 Bad Request\n");
                     builder.append("Content-Type: text/html; charset=utf-8\n");
                     builder.append("\n");
                     builder.append("I am not sure what you want me to do...");
-                }*/
 
 
+                }
+                response = toString().getBytes();
+            }
         } catch (IOException e) {
             e.printStackTrace();
             response = ("<html>ERROR: " + e.getMessage() + "</html>").getBytes();
@@ -293,14 +302,17 @@ class WebServer {
         return response;
     }
 
+
+
     /**
      * Method to read in a query and split it up correctly
+     *
      * @param query parameters on path
      * @return Map of all parameters and their specific values
      * @throws UnsupportedEncodingException If the URLs aren't encoded with UTF-8
      */
-    public static Map<String, String> splitQuery(String query) throws UnsupportedEncodingException {
-        Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+    public static Map <String, String> splitQuery(String query) throws UnsupportedEncodingException {
+        Map <String, String> query_pairs = new LinkedHashMap <String, String>();
         // "q=hello+world%2Fme&bob=5"
         String[] pairs = query.split("&");
         // ["q=hello+world%2Fme", "bob=5"]
@@ -315,10 +327,11 @@ class WebServer {
 
     /**
      * Builds an HTML file list from the www directory
+     *
      * @return HTML string output of file list
      */
     public static String buildFileList() {
-        ArrayList<String> filenames = new ArrayList<>();
+        ArrayList <String> filenames = new ArrayList <>();
 
         // Creating a File object for directory
         File directoryPath = new File("www/");
@@ -361,14 +374,12 @@ class WebServer {
     }
 
     /**
-     *
      * a method to make a web request. Note that this method will block execution
      * for up to 20 seconds while the request is being satisfied. Better to use a
      * non-blocking request.
      *
      * @param aUrl the String indicating the query url for the OMDb api search
      * @return the String result of the http request.
-     *
      **/
     public String fetchURL(String aUrl) {
         StringBuilder sb = new StringBuilder();
