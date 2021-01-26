@@ -224,11 +224,49 @@ class WebServer {
                     // "Owner's repo is named RepoName. Example: find RepoName's contributors" translates to
                     //     "/repos/OWNERNAME/REPONAME/contributors"
 
-                    Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+                    /*Map<String, String> query_pairs = new LinkedHashMap<String, String>();
                     query_pairs = splitQuery(request.replace("github?", ""));
-                    String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
+                    String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));*/
+                    String json =fetchURL("https://api.github?query=users/amehlhase316/repos");
                     System.out.println(json);
 
+                    JSONArray repoArray = new JSONArray(json);
+                    JSONArray newjSON = new JSONArray();
+                    for(int i  = 0; i < repoArray.length();i++){
+                        JSONObject repo = repoArray.getJSONObject(i);
+                        String repoName = repo.getString("name");
+                        System.out.println(repoName);
+
+                        JSONObject owner = repo.getJSONObject("owner");
+                        String ownername = owner.getString("login");
+                        System.out.println(ownername);
+
+                        JSONObject newRepo = new JSONObject();
+                        newRepo.put("name",repoName);
+                        newRepo.put("owner", ownername);
+
+                        String jsonBranches = fetchURL("https://api.github?query=users/amehlhase316/repos");
+                        JSONArray branches = new JSONArray(jsonBranches);
+
+                        JSONArray newBranchJSON = new JSONArray();
+
+                        for(int j = 0;j< branches.length();j++) {
+                            JSONObject branch = branches.getJSONObject(j);
+                            String branchName = branch.getString("name");
+                            System.out.println(" " + branchName);
+                            JSONObject newBranch = new JSONObject();
+                            newBranch.put("name", branchName);
+
+                            newBranchJSON.put(newBranch);
+                        }
+                        newRepo.put("branches", newBranchJSON);
+                        newjSON.put(newRepo);
+                        }
+                    PrintWriter out = new PrintWriter("repoShort.json");
+                    out.println(newjSON.toString());
+                    out.close();
+
+                    }
                     builder.append("Check the todos mentioned in the Java source file");
                     // TODO: Parse the JSON returned by your fetch and create an appropriate
                     // response
@@ -237,18 +275,16 @@ class WebServer {
                     // amehlhase, 46384989 -> ser316examples
                     // amehlhase, 46384989 -> test316
 
-                } else {
+                } /*else {
                     // if the request is not recognized at all
 
                     builder.append("HTTP/1.1 400 Bad Request\n");
                     builder.append("Content-Type: text/html; charset=utf-8\n");
                     builder.append("\n");
                     builder.append("I am not sure what you want me to do...");
-                }
+                }*/
 
-                // Output
-                response = builder.toString().getBytes();
-            }
+
         } catch (IOException e) {
             e.printStackTrace();
             response = ("<html>ERROR: " + e.getMessage() + "</html>").getBytes();
