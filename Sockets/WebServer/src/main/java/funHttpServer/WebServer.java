@@ -221,7 +221,7 @@ class WebServer {
                     String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
                     System.out.println(json);
 
-                    JSONArray repoArray = new JSONArray(json);
+                  /*  JSONArray repoArray = new JSONArray(json);
                     for (int i = 0; i < repoArray.length(); i++) {
                         JSONObject repo = repoArray.getJSONObject(i);
 
@@ -250,8 +250,8 @@ class WebServer {
                     builder.append("I am not sure what you want me to do...");
 
 
-                }
-                builder.append("Check the todo list");
+                }*/
+                }               builder.append("Check the todo list");
                 response = builder.toString().getBytes();
             }
         } catch (IOException e) {
