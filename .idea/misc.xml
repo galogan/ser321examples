@@ -43,5 +43,5 @@
     <file type="web" url="file://$PROJECT_DIR$/Threads/ThreadPool" />
     <file type="web" url="file://$PROJECT_DIR$/Threads/ThreadsShareData" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

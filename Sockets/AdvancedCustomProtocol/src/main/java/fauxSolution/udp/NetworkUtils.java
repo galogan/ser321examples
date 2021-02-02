@@ -115,7 +115,7 @@ public class NetworkUtils {
     ArrayList<Packet> packets = new ArrayList<Packet>();
     do {
       packets.add(Read(sock, 1024));
-    } while (packets.size() > 0 && packets.size() < packets.get(0).Total);
+    } while (packets.size() > 0 && packets.size() > packets.get(0).Total);
     
     packets.sort((p1, p2) -> p1.Current - p2.Current); // sorting the packages by package number
     int totalBufferLength = packets.stream().mapToInt((p)->p.Length).sum(); // summing up how long the payload is

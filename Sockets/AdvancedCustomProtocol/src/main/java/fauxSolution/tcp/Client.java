@@ -51,7 +51,7 @@ public class Client {
     return request;
   }
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     Socket sock;
     try {
       sock = new Socket("localhost", 9000);
@@ -60,35 +60,35 @@ public class Client {
 
       Scanner input = new Scanner(System.in);
       int choice;
-      System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
-      do {
-        choice = input.nextInt(); // what if not int.. shoudl error handle this
+      System.out.println("Please select a valid option (1-5). 0 to disconnect the client");
+      while (true) {
+        choice = input.nextInt(); // what if not int.. should error handle this
         JSONObject request = null;
         switch (choice) {
-        case (1):
-          request = joke();
-          break;
-        case (2):
-          request = quote();
-          break;
-        case (3):
-          request = image();
-          break;
-        case (4):
-          request = random();
-          break;
-        case (5):
-          System.out.println("Jokes on you, I decided I do not like num 5: https://gph.is/g/a99OP09");
-          break;
-        case (0):
-          sock.close();
-          out.close();
-          in.close();
-          System.exit(0);
-          break;
-        default:
-          System.out.println("Please select a valid option (1-5).");
-          break;
+          case (1):
+            request = joke();
+            break;
+          case (2):
+            request = quote();
+            break;
+          case (3):
+            request = image();
+            break;
+          case (4):
+            request = random();
+            break;
+          case (5):
+            System.out.println("Jokes on you, I decided I do not like num 5: https://gph.is/g/a99OP09");
+            break;
+          case (0):
+            sock.close();
+            out.close();
+            in.close();
+            System.exit(0);
+            break;
+          default:
+            System.out.println("Please select a valid option (1-5).");
+            break;
         }
 
         if (request != null) {
@@ -99,33 +99,33 @@ public class Client {
             System.out.println(response.getString("error"));
           } else {
             switch (response.getInt("datatype")) {
-            case (1):
-              System.out.println("Your " + response.getString("type"));
-              System.out.println(response.getString("data"));
-              break;
-            case (2): {
-              System.out.println("Your image");
-              Base64.Decoder decoder = Base64.getDecoder();
-              byte[] bytes = decoder.decode(response.getString("data"));
-              ImageIcon icon = null;
-              try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes)) {
-                BufferedImage image = ImageIO.read(bais);
-                icon = new ImageIcon(image);
+              case (1):
+                System.out.println("Your " + response.getString("type"));
+                System.out.println(response.getString("data"));
+                break;
+              case (2): {
+                System.out.println("Your image");
+                Base64.Decoder decoder = Base64.getDecoder();
+                byte[] bytes = decoder.decode(response.getString("data"));
+                ImageIcon icon = null;
+                try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes)) {
+                  BufferedImage image = ImageIO.read(bais);
+                  icon = new ImageIcon(image);
+                }
+                if (icon != null) {
+                  JFrame frame = new JFrame();
+                  JLabel label = new JLabel();
+                  label.setIcon(icon);
+                  frame.add(label);
+                  frame.setSize(icon.getIconWidth(), icon.getIconHeight());
+                  frame.show();
+                }
               }
-              if (icon != null) {
-                JFrame frame = new JFrame();
-                JLabel label = new JLabel();
-                label.setIcon(icon);
-                frame.add(label);
-                frame.setSize(icon.getIconWidth(), icon.getIconHeight());
-                frame.show();
-              }
-            }
               break;
             }
           }
         }
-      } while (true);
+      }
     } catch (IOException e) {
       e.printStackTrace();
     }

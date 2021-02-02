@@ -88,7 +88,7 @@ public class Server {
     json.put("error", err);
     return json;
   }
-
+@SuppressWarnings("InfiniteLoopStatement")
   public static void main(String[] args) throws IOException {
     ServerSocket serv = null;
     try {

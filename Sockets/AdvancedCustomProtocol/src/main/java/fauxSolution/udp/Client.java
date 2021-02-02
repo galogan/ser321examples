@@ -63,28 +63,28 @@ public static JSONObject random() {
       Scanner input = new Scanner(System.in);
       int choice;
       System.out.println("Please select a valid option (1-5). 0 to diconnect the client");
-      do {
+      while (true) {
         choice = input.nextInt(); // what if not int? .. should error handle this
         JSONObject request = null;
         switch (choice) {
-        case (1):
-          request = joke();
-          break;
-        case (2):
-          request = quote();
-          break;
-        case (3):
-          request = image();
-          break;
-        case (4):
-          request = random();
-          break;
-        case (5):
-        	  System.out.println("Jokes on you, I decided I do not like num 5: https://gph.is/g/a99OP09");
-          break;
-        default:
-          System.out.println("Please select a valid option (1-5).");
-          break;
+          case (1):
+            request = joke();
+            break;
+          case (2):
+            request = quote();
+            break;
+          case (3):
+            request = image();
+            break;
+          case (4):
+            request = random();
+            break;
+          case (5):
+            System.out.println("Jokes on you, I decided I do not like num 5: https://gph.is/g/a99OP09");
+            break;
+          default:
+            System.out.println("Please select a valid option (1-5).");
+            break;
         }
 
         if (request != null) {
@@ -92,15 +92,15 @@ public static JSONObject random() {
           NetworkUtils.Tuple responseTuple = NetworkUtils.Receive(sock);
           JSONObject response = JsonUtils.fromByteArray(responseTuple.Payload);
           if (response.has("error")) {
-              System.out.println(response.getString("error"));
-            } else {
-              switch (response.getInt("datatype")) {
+            System.out.println(response.getString("error"));
+          } else {
+            switch (response.getInt("datatype")) {
               case (1):
-              	  System.out.println("Your " + response.getString("type"));
+                System.out.println("Your " + response.getString("type"));
                 System.out.println(response.getString("data"));
                 break;
               case (2): {
-              	  System.out.println("Your image");
+                System.out.println("Your image");
                 Base64.Decoder decoder = Base64.getDecoder();
                 byte[] bytes = decoder.decode(response.getString("data"));
                 ImageIcon icon = null;
@@ -121,7 +121,7 @@ public static JSONObject random() {
             }
           }
         }
-      } while (true);
+      }
     } catch (IOException e) {
       e.printStackTrace();
     }
